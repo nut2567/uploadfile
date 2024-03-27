@@ -210,10 +210,10 @@
         
         <div *ngIf="filenames.length > 0" class="js-upload-finished">
           <h3>Processed files</h3>
-          <div  class="list-group">
+          <div *ngFor="let item of filenames" class="list-group">
             <div  class="list-group-item list-group-item-success" style="cursor: pointer;">
-              {{ filenames }}            
-              <a class="alert-success float-right">Download</a>
+              {{ item }}            
+              <a class="alert-success float-right" (click)="onDownloadFile(item)" >Download</a>
             </div><br>
           </div>
         </div>
